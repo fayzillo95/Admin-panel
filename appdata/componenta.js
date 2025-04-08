@@ -34,7 +34,6 @@ function tablerun(tr,id){
     })
 
     tr.children[4].children[0].children[0].addEventListener('click',(event) =>{
-        console.log(id)
         row_index = id
         const user = JSON.parse(window.localStorage.getItem(`user_${id}`))
         let inputlar = get.getFormInputs()
@@ -47,7 +46,6 @@ function tablerun(tr,id){
         const blog_notf = document.querySelector('#notifications-blog')
         const news_notf = document.querySelector('#notifications-news')
         const offer_notf = document.querySelector('#notifications-offers')
-        console.log(user.notification);
         
         blog_notf.checked = user.notification.posts
         news_notf.checked = user.notification.newsletter
@@ -55,7 +53,6 @@ function tablerun(tr,id){
         btn_test = true
         setLabel('','Current Password')
     })
-    
     tr.children[4].children[0].children[1].addEventListener('click',(event) =>{
         if(!emptyIdlist.includes(id)){
             emptyIdlist.push(id)
@@ -84,7 +81,6 @@ function tablerun(tr,id){
         }
         else{
             status = false
-            console.log(arr.at(-1));
             tr.children[3].children[0].classList.remove('fa-toggle-on')
             tr.children[3].children[0].classList.add('fa-toggle-off')
             active_count.innerHTML = `/&nbsp;${Number(active_count.innerText.slice(2)) - 1}`

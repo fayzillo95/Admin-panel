@@ -1,6 +1,5 @@
 search_input.addEventListener('keyup',(event) =>{
     if (event.key == 'Enter') {
-        console.log(search_input.value);
         get.filterRun(5,search_input.value)
     }
 })
@@ -24,7 +23,6 @@ class Validadtion {
     }
     testTwoPass(password,currentPassword){
         if(password == currentPassword){
-            console.log('TestTwoPass ; ', true);
             return true
         }
         else{
@@ -90,7 +88,6 @@ class User {
             window.localStorage.setItem('users',JSON.stringify(users.sort((a,b) => a - b)))
 
         } catch (error) {
-            console.log(error)
         }
     }
 
@@ -225,7 +222,6 @@ class Table {
             tablerun(tr, id);
             return tr;
         } catch (error) {
-            console.log(error);
         }
     }
 
@@ -311,7 +307,7 @@ class Getter {
             }
         } 
     }
-
+    
     getTbody() {
         return  Array.from(document.querySelector('tbody').children)
     }

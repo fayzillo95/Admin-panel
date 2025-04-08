@@ -7,16 +7,13 @@ for(let key of radio_list){
         let res = key.id.split('-').at(-1)
         switch (res) {
             case 'any':
-                console.log('any');
                 get.filterRun('status','any')
                 break;
             case 'active':
-                console.log('active');
                 get.filterRun('status',true)
                 break;
             case 'disabled':
                 get.filterRun('status',false)
-                console.log('disabled');
                 break;
             default:
 
@@ -24,7 +21,6 @@ for(let key of radio_list){
         }
     })
 }
-
 function createUser(...data) {
     const user = new User(...data)
     table.addRow(data[1],data.at(-1),data[5],data[0])
@@ -38,13 +34,11 @@ function testSave(event) {
     if(btn_test){
         updateUser()
     }else{
-        console.log(emptyIdlist)
         maxId = JSON.parse(window.localStorage.getItem('maxId')) + 1
         let [full_name, user_name, email, bio, password, new_password, check_password] = get.getTextAll()
 
         if(!(tester.testEmail(email) && 
         tester.testPassword(password))){
-            console.log('TestSave False');
             return 
         }
         if(emptyIdlist.length > 0) {
@@ -88,7 +82,6 @@ function updateUser() {
             closeModal()
 
         } catch (error) {
-            console.log(`UpdateUser : ${error}`);
         }
     }
     else{
@@ -103,7 +96,6 @@ new_user.addEventListener('click',(event) =>{
 })
 
 function clearMOdal() {
-    console.log('Close');
     try {
         let inputs = get.getFormInputs();
         inputs.forEach((input) => {
@@ -115,7 +107,6 @@ function clearMOdal() {
         });
 
     } catch (error) {
-        console.log(error);
     }    
 }
 
