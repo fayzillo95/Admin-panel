@@ -304,6 +304,7 @@ class Getter {
     }
 
     getLokalStorage() {
+        
         for(let index of page_user) {
             const user  = JSON.parse(window.localStorage.getItem(`user_${index}`))
             if(user){
