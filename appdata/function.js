@@ -3,6 +3,7 @@ const get = new Getter()
 
 for(let key of radio_list){
     key.addEventListener('click',(event) =>{
+        search_input.value = ''
         const get = new Getter()
         let res = key.id.split('-').at(-1)
         switch (res) {
