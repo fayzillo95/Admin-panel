@@ -304,7 +304,6 @@ class Getter {
     }
 
     getLokalStorage() {
-        
         for(let index of page_user) {
             const user  = JSON.parse(window.localStorage.getItem(`user_${index}`))
             if(user){
@@ -343,7 +342,6 @@ class Getter {
         }
     }
     filterRun(key, value) {
-        console.log(key, value);
         
         const tbody = document.getElementsByTagName('tbody')[0];
         const table = new Table();
@@ -396,5 +394,8 @@ class Getter {
         page_user = JSON.parse(localStorage.getItem('users')).splice(index*10, 10)
         document.getElementsByTagName('tbody')[0].innerHTML = ''
         get.getLokalStorage()
+        let any = document.getElementById('users-status-any')
+        any.checked = true
+        search_input.value = ''
     }
 }
